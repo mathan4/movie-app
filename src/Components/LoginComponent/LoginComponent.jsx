@@ -1,28 +1,28 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const LoginComponent = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+  const navigate = useNavigate()
 
   const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
+    setUsername(event.target.value)
+  }
 
   const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+    setPassword(event.target.value)
+  }
 
   const handleLogin = () => {
     if (username.trim() !== '') {
-      localStorage.setItem('username', username);
-      alert(`Logged in as ${username}`);
-      navigate('/Movies');
+      localStorage.setItem('username', username)
+      alert(`Logged in as ${username}`)
+      navigate('/Movies')
     } else {
-      alert('Please enter a username.');
+      alert('Please enter a username.')
     }
-  };
+  }
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-gray-800 to-gray-900 px-4">
@@ -71,7 +71,7 @@ const LoginComponent = () => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LoginComponent;
+export default LoginComponent
